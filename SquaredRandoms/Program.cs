@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SquaredRandoms
 {
@@ -6,13 +7,41 @@ namespace SquaredRandoms
     {
         static void Main(string[] args)
         {
-            // Using the Random class, generate a list of 20 random numbers that are in the range of 1-50.
+            var randomList = new List<int>();
+            var randomListSquared = new List<int>();
+            var randy = new Random();
 
-            // Random random = new Random();
-            // Create a list
-            // Populate the list
-            // With the resulting List, populate a new List that contains each number squared.For example, if the original list is 2, 5, 3, 15, the final list will be 4, 25, 9, 225.
+            Console.WriteLine("Original Random List:");
+            for (int i = 0; i < 20; i++)
+            {
+                int val = randy.Next(1, 51);
+                randomList.Add(val);
+                Console.Write(" " + val);
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Squared List:");
+
+            for (int j = 0; j < randomList.Count; j++ )
+            {
+                int temp = randomList[j];
+                int squaredTemp = temp * temp;
+                randomListSquared.Add(squaredTemp);
+                Console.Write(" " + squaredTemp);
+            }
+
+            Console.WriteLine("");
+
+            Console.ReadLine();
+            // Using the Random class, generate a list of 20 random numbers that are in the range of 1-50.
             // Then remove any number that is odd from the list of squared numbers.
+
+            //Random rnd = new Random();
+            //for (int ctr = 1; ctr <= 15; ctr++)
+            //{
+            //    Console.Write("{0,3}    ", rnd.Next(-10, 11));
+            //    if (ctr % 5 == 0) Console.WriteLine();
+            //}
         }
     }
 }
