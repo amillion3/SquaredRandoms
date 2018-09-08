@@ -10,37 +10,25 @@ namespace SquaredRandoms
             var randomList = new List<int>();
             var randomListSquared = new List<int>();
             var randomListSquaredEven = new List<int>();
+            int numberOfRandomNumbers = 20;
             var randy = new Random();
 
-            Console.WriteLine("Original Random List:");
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < numberOfRandomNumbers; i++)
             {
+                // Generate a random int between 1 and 50
                 int val = randy.Next(1, 51);
                 randomList.Add(val);
-                Console.Write(" " + val);
-            }
 
-            Console.WriteLine("");
-            Console.WriteLine("Squared List:");
-            for (int j = 0; j < randomList.Count; j++ )
-            {
-                int temp = randomList[j];
-                int squaredTemp = temp * temp;
-                randomListSquared.Add(squaredTemp);
-                Console.Write(" " + squaredTemp);
-            }
+                // Square the random integers
+                int valSquared = val * val;
+                randomListSquared.Add(valSquared);
 
-            Console.WriteLine("");
-            Console.WriteLine("Squared numbers that are even");
-            for (int k = 0; k < randomListSquared.Count; k++)
-            {
-                if (randomListSquared[k] % 2 == 0)
+                // Check even/odd and save only the even values
+                if (valSquared % 2 == 0)
                 {
-                    randomListSquaredEven.Add(randomListSquared[k]);
-                    Console.Write(" " + randomListSquared[k]);
+                    randomListSquaredEven.Add(valSquared);
                 }
             }
-
             Console.ReadLine();
         }
     }
