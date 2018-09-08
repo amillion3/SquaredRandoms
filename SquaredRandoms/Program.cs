@@ -9,6 +9,7 @@ namespace SquaredRandoms
         {
             var randomList = new List<int>();
             var randomListSquared = new List<int>();
+            var randomListSquaredEven = new List<int>();
             var randy = new Random();
 
             Console.WriteLine("Original Random List:");
@@ -21,7 +22,6 @@ namespace SquaredRandoms
 
             Console.WriteLine("");
             Console.WriteLine("Squared List:");
-
             for (int j = 0; j < randomList.Count; j++ )
             {
                 int temp = randomList[j];
@@ -31,17 +31,17 @@ namespace SquaredRandoms
             }
 
             Console.WriteLine("");
+            Console.WriteLine("Squared numbers that are even");
+            for (int k = 0; k < randomListSquared.Count; k++)
+            {
+                if (randomListSquared[k] % 2 == 0)
+                {
+                    randomListSquaredEven.Add(randomListSquared[k]);
+                    Console.Write(" " + randomListSquared[k]);
+                }
+            }
 
             Console.ReadLine();
-            // Using the Random class, generate a list of 20 random numbers that are in the range of 1-50.
-            // Then remove any number that is odd from the list of squared numbers.
-
-            //Random rnd = new Random();
-            //for (int ctr = 1; ctr <= 15; ctr++)
-            //{
-            //    Console.Write("{0,3}    ", rnd.Next(-10, 11));
-            //    if (ctr % 5 == 0) Console.WriteLine();
-            //}
         }
     }
 }
